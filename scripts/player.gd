@@ -1,7 +1,8 @@
 extends Area2D
 
 export (int) var SPEED = 300
-export var angle = 0
+export (int) var health = 100
+var angle : int = 0
 
 func _ready():
 	pass
