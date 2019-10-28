@@ -40,3 +40,8 @@ func _process(delta):
 	velocity = velocity.normalized()
 	rotation_degrees = angle
 	position += velocity * SPEED * delta
+
+
+func set_start_position(start_position : Vector2):
+	position = start_position
+
