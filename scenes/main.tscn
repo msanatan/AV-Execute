@@ -21,6 +21,7 @@ size_flags_vertical = 3
 color = Color( 0.364706, 0.25098, 0.415686, 1 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
+speed = 300
 
 [node name="PlayerStartPosition" type="Position2D" parent="."]
 position = Vector2( 512, 384 )
