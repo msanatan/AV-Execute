@@ -1,9 +1,9 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 export (int) var health
-export (int) var min_speed
-export (int) var max_speed
+export (int) var speed
 var direction: float
+var can_shoot: bool
 
 func _ready():
 	pass
