@@ -5,3 +5,9 @@
 [node name="virus" type="RigidBody2D"]
 mode = 1
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="ShootTimer" type="Timer" parent="."]
