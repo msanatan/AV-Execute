@@ -20,6 +20,5 @@ func _on_VirusTimer_timeout():
 	add_child(virus)
 	var direction = $VirusPath/VirusSpawnLocation.rotation + PI / 2
 	var virus_position = $VirusPath/VirusSpawnLocation.position
-	direction += rand_range(-PI / 4, PI / 4)
 	virus.set_start_position(virus_position)
 	virus.set_direction(direction)
