@@ -39,9 +39,9 @@ func _process(delta):
 		else:
 			angle = PI / 2
 	
-	velocity = velocity.normalized()
 	if velocity.length() != 0:
 		direction = velocity
+	velocity = velocity.normalized()
 	
 	rotation = angle
 	position += velocity * speed * delta

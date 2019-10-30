@@ -31,7 +31,7 @@ curve = SubResource( 1 )
 
 [node name="VirusSpawnLocation" type="PathFollow2D" parent="VirusPath"]
 position = Vector2( -2, 1.39998 )
-rotation = 0.0019474
+rotation = 0.00194737
 
 [node name="VirusTimer" type="Timer" parent="."]
 [connection signal="timeout" from="VirusTimer" to="." method="_on_VirusTimer_timeout"]

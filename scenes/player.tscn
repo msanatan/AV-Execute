@@ -13,7 +13,7 @@ __meta__ = {
 "_edit_group_": true
 }
 player_laser = ExtResource( 2 )
-speed = 200
+speed = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
