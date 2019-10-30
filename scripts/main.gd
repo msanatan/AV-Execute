@@ -1,6 +1,6 @@
 extends Node2D
 
-export (PackedScene) var virus1
+export (PackedScene) var basic_virus
 var score : int
 
 func _ready():
@@ -16,7 +16,7 @@ func new_game():
 func _on_VirusTimer_timeout():
 	$VirusPath/VirusSpawnLocation.set_offset(randi())
 	# TODO: work out probabilities of adding different virus types
-	var virus = virus1.instance()
+	var virus = basic_virus.instance()
 	add_child(virus)
 	var direction = $VirusPath/VirusSpawnLocation.rotation + PI / 2
 	var virus_position = $VirusPath/VirusSpawnLocation.position
