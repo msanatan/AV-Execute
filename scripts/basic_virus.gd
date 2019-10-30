@@ -1,8 +1,23 @@
 extends "res://scripts/virus.gd"
 
+var can_move: bool
+var velocity: Vector2
+
 func _ready():
-	pass
+	can_move = true
+	rotation = direction
 
 func _process(delta):
-	rotation = direction
-	linear_velocity = Vector2(rand_range(min_speed, max_speed), 0).rotated(direction)
+	if can_move:
+		move_and_collide(Vector2(speed, 0).rotated(direction))
+		can_move = false
+		$MoveTimer.start()
+	else:
+		move_and_collide(Vector2())
+
+func _on_ShootTimer_timeout():
+	can_shoot = true
+
+
+func _on_MoveTimer_timeout():
+	can_move = true
