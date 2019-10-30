@@ -50,7 +50,7 @@ func _process(delta):
 		var laser = player_laser.instance()
 		laser.set_start_position($CanonPosition.global_position)
 		laser.velocity = direction
-		laser.angle = angle
+		laser.set_rotation(angle)
 		get_tree().get_root().add_child(laser)
 
 
