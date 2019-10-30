@@ -22,3 +22,6 @@ texture = ExtResource( 3 )
 position = Vector2( 0, 28 )
 scale = Vector2( 7.5, 7.5 )
 shape = SubResource( 1 )
+
+[node name="CanonPosition" type="Position2D" parent="."]
+position = Vector2( 0, -65 )
