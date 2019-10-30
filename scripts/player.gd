@@ -3,7 +3,7 @@ extends Area2D
 export (PackedScene) var player_laser
 export (int) var speed = 300
 export (int) var health = 100
-var angle : int = 0
+var angle : float = 0
 var direction : Vector2 = Vector2(0, -1)
 
 func _ready():
@@ -20,37 +20,37 @@ func _process(delta):
 		up = true
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y += 1
-		angle = 180
+		angle = PI
 		down = true
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
 		if up:
-			angle -= 45
+			angle -= PI / 4
 		elif down:
-			angle += 45
+			angle += PI / 4
 		else:
-			angle = -90
+			angle = -(PI / 2)
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x += 1
 		if up:
-			angle += 45
+			angle += PI / 4
 		elif down:
-			angle -= 45
+			angle -= PI / 4
 		else:
-			angle = 90
+			angle = PI / 2
 	
 	velocity = velocity.normalized()
 	if velocity.length() != 0:
 		direction = velocity
 	
-	rotation_degrees = angle
+	rotation = angle
 	position += velocity * speed * delta
 	
 	if Input.is_action_pressed("ui_accept"):
 		var laser = player_laser.instance()
-		laser.set_start_position(position)
+		laser.set_start_position($CanonPosition.global_position)
 		laser.velocity = direction
-		laser.angle = deg2rad(angle)
+		laser.angle = angle
 		get_tree().get_root().add_child(laser)
 
 
