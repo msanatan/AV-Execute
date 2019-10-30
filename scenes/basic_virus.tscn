@@ -8,10 +8,8 @@
 radius = 27.0326
 
 [node name="virus" index="0" instance=ExtResource( 1 )]
-mode = 0
 script = ExtResource( 2 )
-min_speed = 100
-max_speed = 200
+speed = 20
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.5, 0.5 )
@@ -19,3 +17,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="MoveTimer" type="Timer" parent="." index="3"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+[connection signal="timeout" from="MoveTimer" to="." method="_on_MoveTimer_timeout"]
