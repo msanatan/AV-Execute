@@ -7,6 +7,7 @@ func _ready():
 	randomize()
 	new_game()
 
+
 func new_game():
 	score = 0
 	$player.set_start_position($PlayerStartPosition.position)
@@ -18,7 +19,7 @@ func _on_VirusTimer_timeout():
 	# TODO: work out probabilities of adding different virus types
 	var virus = basic_virus.instance()
 	add_child(virus)
-	var direction = $VirusPath/VirusSpawnLocation.rotation + PI / 2
+	var virus_angle = $VirusPath/VirusSpawnLocation.rotation + PI / 2
 	var virus_position = $VirusPath/VirusSpawnLocation.position
 	virus.set_start_position(virus_position)
-	virus.set_direction(direction)
+	virus.angle = virus_angle
