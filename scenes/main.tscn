@@ -34,4 +34,5 @@ position = Vector2( -2, 1.39998 )
 rotation = 0.00194737
 
 [node name="VirusTimer" type="Timer" parent="."]
+wait_time = 2.0
 [connection signal="timeout" from="VirusTimer" to="." method="_on_VirusTimer_timeout"]
