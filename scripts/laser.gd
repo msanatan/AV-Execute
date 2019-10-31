@@ -14,6 +14,7 @@ func _process(delta):
 func set_start_position(start_position: Vector2):
 	position = start_position
 
+
 func set_rotation(angle: float):
 	rotation = angle
 
