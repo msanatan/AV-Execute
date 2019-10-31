@@ -20,6 +20,10 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )
 
+[node name="ShootTimer" parent="." index="2"]
+wait_time = 2.0
+autostart = true
+
 [node name="MoveTimer" type="Timer" parent="." index="3"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
 [connection signal="timeout" from="MoveTimer" to="." method="_on_MoveTimer_timeout"]
