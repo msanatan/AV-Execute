@@ -1,5 +1,7 @@
 extends Area2D
 
+signal player_hit
+
 export (PackedScene) var player_laser
 export (int) var speed = 300
 export (int) var health = 100
