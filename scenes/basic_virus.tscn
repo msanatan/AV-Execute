@@ -8,8 +8,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 27.0326
 
-[node name="virus" instance=ExtResource( 1 )]
+[node name="virus" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+health = 20
 speed = 40
 basic_virus_laser = ExtResource( 3 )
 
