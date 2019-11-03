@@ -12,6 +12,7 @@ func new_game():
 	score = 0
 	$player.set_start_position($PlayerStartPosition.position)
 	$VirusTimer.start()
+	$hud.update_score(score)
 
 
 func _on_VirusTimer_timeout():
