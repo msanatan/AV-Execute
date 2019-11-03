@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 export (int) var health
 export (int) var speed
-export (float) var angle
+export (int) var damage
+var angle: float
 var can_shoot: bool
 
 func _ready():
