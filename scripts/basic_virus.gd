@@ -8,13 +8,14 @@ func _ready():
 	can_move = true
 
 func _process(delta):
+	var move_vector = Vector2()
 	if can_move:
-		move_and_collide(Vector2(speed, 0).rotated(angle))
+		move_vector = Vector2(speed, 0).rotated(angle) 
 		can_move = false
 		$MoveTimer.start()
-	else:
-		move_and_collide(Vector2())
-	
+
+	position += move_vector
+
 	if can_shoot:
 		shoot()
 
