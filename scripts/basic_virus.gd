@@ -43,8 +43,9 @@ func shoot():
 
 
 func _on_virus_area_entered(area):
-	if area.get("node_type"):
-		if area.node_type == "player_laser":
+	if area.get_node("identifier"):
+		var identifier = area.get_node("identifier")
+		if identifier.game_id == "player_laser":
 			health -= area.damage
 			area.queue_free()
 			if health <= 0:
