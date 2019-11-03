@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 27.0326
 
-[node name="virus" instance=ExtResource( 1 )]
+[node name="virus" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 health = 20
 speed = 40
@@ -27,6 +27,9 @@ wait_time = 2.0
 autostart = true
 
 [node name="MoveTimer" type="Timer" parent="." index="3"]
+
+[node name="identifier" parent="." index="4"]
+game_id = "basic_virus"
 [connection signal="area_entered" from="." to="." method="_on_virus_area_entered"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
 [connection signal="timeout" from="MoveTimer" to="." method="_on_MoveTimer_timeout"]
