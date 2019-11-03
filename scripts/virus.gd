@@ -1,5 +1,7 @@
 extends Area2D
 
+signal virus_died
+
 export (int) var health
 export (int) var speed
 export (int) var damage
