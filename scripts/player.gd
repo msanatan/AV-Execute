@@ -65,6 +65,24 @@ func set_start_position(start_position : Vector2):
 	position = start_position
 
 
-
 func _on_ShootTimer_timeout():
 	can_shoot = true
+
+
+func _on_player_body_entered(body):
+	emit_signal("player_hit")
+	body.queue_free()
+	if body.damage:
+		health -= body.damage
+
+
+func _on_player_area_entered(area):
+	emit_signal("player_hit")
+	area.queue_free()
+	if area.damage:
+		health -= area.damage
+
+
+func _on_player_player_hit():
+	if health <= 0:
+		emit_signal("player_died")
