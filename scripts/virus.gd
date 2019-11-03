@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 export (int) var health
 export (int) var speed
