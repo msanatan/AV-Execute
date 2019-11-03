@@ -8,6 +8,7 @@
 [node name="laser" index="0" instance=ExtResource( 1 )]
 speed = 500
 damage = 10
+node_type = "basic_virus_laser"
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
