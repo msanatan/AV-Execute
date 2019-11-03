@@ -1,10 +1,12 @@
 extends Area2D
 
 signal player_hit
+signal player_died
 
 export (PackedScene) var player_laser
 export (int) var speed = 300
 export (int) var health = 100
+export (int) var max_health = 100
 var angle: float = 0
 var direction: Vector2 = Vector2(0, -1)
 var can_shoot: bool = true
