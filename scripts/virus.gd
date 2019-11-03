@@ -5,6 +5,7 @@ signal virus_died
 export (int) var health
 export (int) var speed
 export (int) var damage
+export (int) var points
 var angle: float
 var can_shoot: bool
 
