@@ -3,7 +3,6 @@ extends Area2D
 export (Vector2) var velocity
 export (int) var speed
 export (int) var damage
-export (String) var node_type
 
 func _ready():
 	pass
