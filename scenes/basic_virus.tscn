@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 health = 20
 speed = 40
 damage = 20
+points = 10
 basic_virus_laser = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
