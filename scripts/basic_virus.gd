@@ -7,10 +7,11 @@ var velocity: Vector2
 func _ready():
 	can_move = true
 
+
 func _process(delta):
 	var move_vector = Vector2()
 	if can_move:
-		move_vector = Vector2(speed, 0).rotated(angle) 
+		move_vector = Vector2(speed, 0).rotated(angle)
 		can_move = false
 		$MoveTimer.start()
 
@@ -39,3 +40,13 @@ func shoot():
 		rotation_offset += PI / 2
 	can_shoot = false
 	$ShootTimer.start()
+
+
+func _on_virus_area_entered(area):
+	if area.get("node_type"):
+		if area.node_type == "player_laser":
+			health -= area.damage
+			area.queue_free()
+			if health <= 0:
+				emit_signal("virus_died")
+				queue_free()
