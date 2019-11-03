@@ -20,7 +20,13 @@ func _on_VirusTimer_timeout():
 	# TODO: work out probabilities of adding different virus types
 	var virus = basic_virus.instance()
 	add_child(virus)
+	virus.connect("virus_died", self, "on_virus_died")
 	var virus_angle = $VirusPath/VirusSpawnLocation.rotation + PI / 2
 	var virus_position = $VirusPath/VirusSpawnLocation.position
 	virus.set_start_position(virus_position)
 	virus.angle = virus_angle
+
+
+func on_virus_died():
+	score += 10
+	$hud.update_score(score)
