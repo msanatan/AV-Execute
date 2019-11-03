@@ -2,6 +2,7 @@ extends Area2D
 
 export (Vector2) var velocity
 export (int) var speed
+export (int) var damage
 
 func _ready():
 	pass
