@@ -8,10 +8,12 @@
 [node name="laser" instance=ExtResource( 1 )]
 speed = 600
 damage = 10
-node_type = "player_laser"
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="identifier" parent="." index="3"]
+game_id = "player_laser"
