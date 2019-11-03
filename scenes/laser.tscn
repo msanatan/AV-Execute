@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/laser.gd" type="Script" id=1]
+[ext_resource path="res://scenes/identifier.tscn" type="PackedScene" id=2]
 
 [node name="laser" type="Area2D"]
 script = ExtResource( 1 )
@@ -13,4 +14,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="identifier" parent="." instance=ExtResource( 2 )]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
