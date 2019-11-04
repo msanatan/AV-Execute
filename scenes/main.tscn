@@ -13,6 +13,7 @@ _data = {
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
 basic_virus = ExtResource( 2 )
+start_time = 3
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 1024.0
@@ -25,7 +26,7 @@ color = Color( 0.541176, 0.337255, 0.631373, 1 )
 speed = 300
 
 [node name="PlayerStartPosition" type="Position2D" parent="."]
-position = Vector2( 512, 384 )
+position = Vector2( 512, 584 )
 
 [node name="VirusPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -37,6 +38,9 @@ rotation = 0.00194737
 [node name="VirusTimer" type="Timer" parent="."]
 wait_time = 2.0
 
+[node name="StartTimer" type="Timer" parent="."]
+
 [node name="hud" parent="." instance=ExtResource( 4 )]
 [connection signal="player_hit" from="player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="VirusTimer" to="." method="_on_VirusTimer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

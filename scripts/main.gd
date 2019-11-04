@@ -1,6 +1,7 @@
 extends Node2D
 
 export (PackedScene) var basic_virus
+export (int) var start_time
 var score : int
 
 func _ready():
@@ -11,9 +12,10 @@ func _ready():
 func new_game():
 	score = 0
 	$player.set_start_position($PlayerStartPosition.position)
-	$VirusTimer.start()
 	$hud.update_score(score)
 	$hud.update_player_health($player.health)
+	$hud.update_countdown(start_time)
+	$StartTimer.start()
 
 
 func _on_VirusTimer_timeout():
@@ -35,3 +37,12 @@ func on_virus_died(virus):
 
 func _on_player_player_hit():
 	$hud.update_player_health($player.health)
+
+
+func _on_StartTimer_timeout():
+	start_time -= 1
+	if start_time == 0:
+		$hud/CenterContainer/Countdown.hide()
+		$VirusTimer.start()
+		$StartTimer.stop()
+	$hud.update_countdown(start_time)
