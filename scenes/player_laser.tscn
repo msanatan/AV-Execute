@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="laser" instance=ExtResource( 1 )]
-speed = 600
+speed = 800
 damage = 10
 
 [node name="Sprite" parent="." index="0"]

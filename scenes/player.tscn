@@ -27,7 +27,7 @@ shape = SubResource( 1 )
 position = Vector2( 0, -65 )
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 [connection signal="area_entered" from="." to="." method="_on_player_area_entered"]
 [connection signal="player_hit" from="." to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
