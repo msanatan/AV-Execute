@@ -3,6 +3,7 @@ extends CanvasLayer
 onready var ScoreLabel = $GUI/HBoxContainer/ScoreLabel
 onready var HPLabel = $GUI/HBoxContainer/HealthBars/HealthLabel
 onready var HPGauge = $GUI/HBoxContainer/HealthBars/Gauge
+onready var Countdown = $CenterContainer/Countdown
 
 func _ready():
 	pass
@@ -15,3 +16,7 @@ func update_player_health(health: int):
 
 func update_score(score: int):
 	ScoreLabel.text = "Score:" + str(score)
+	
+
+func update_countdown(seconds: int):
+	Countdown.text = str(seconds)
