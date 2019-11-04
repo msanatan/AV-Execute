@@ -14,12 +14,12 @@ _data = {
 script = ExtResource( 1 )
 basic_virus = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 768.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0.364706, 0.25098, 0.415686, 1 )
+color = Color( 0.541176, 0.337255, 0.631373, 1 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 speed = 300
