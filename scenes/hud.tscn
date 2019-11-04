@@ -15,14 +15,14 @@ margin_right = 20.0
 margin_bottom = 20.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="GUI"]
-margin_right = 298.0
+margin_right = 283.0
 margin_bottom = 66.0
 custom_constants/separation = 20
 
 [node name="HealthBars" type="HBoxContainer" parent="GUI/HBoxContainer"]
-margin_right = 298.0
+margin_right = 283.0
 margin_bottom = 30.0
-custom_constants/separation = 50
+custom_constants/separation = 25
 
 [node name="HealthLabel" type="Label" parent="GUI/HBoxContainer/HealthBars"]
 margin_top = 7.0
@@ -32,15 +32,15 @@ custom_fonts/font = ExtResource( 2 )
 text = "HP:"
 
 [node name="Gauge" type="TextureProgress" parent="GUI/HBoxContainer/HealthBars"]
-margin_left = 98.0
-margin_right = 298.0
+margin_left = 73.0
+margin_right = 273.0
 margin_bottom = 30.0
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
 
 [node name="ScoreLabel" type="Label" parent="GUI/HBoxContainer"]
 margin_top = 50.0
-margin_right = 298.0
+margin_right = 283.0
 margin_bottom = 66.0
 custom_fonts/font = ExtResource( 2 )
 text = "Score: "
