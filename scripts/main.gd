@@ -13,6 +13,7 @@ func new_game():
 	$player.set_start_position($PlayerStartPosition.position)
 	$VirusTimer.start()
 	$hud.update_score(score)
+	$hud.update_player_health($player.health)
 
 
 func _on_VirusTimer_timeout():
@@ -30,3 +31,7 @@ func _on_VirusTimer_timeout():
 func on_virus_died(virus):
 	score += virus.points
 	$hud.update_score(score)
+
+
+func _on_player_player_hit():
+	$hud.update_player_health($player.health)

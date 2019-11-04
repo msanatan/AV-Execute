@@ -38,4 +38,5 @@ rotation = 0.00194737
 wait_time = 2.0
 
 [node name="hud" parent="." instance=ExtResource( 4 )]
+[connection signal="player_hit" from="player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="VirusTimer" to="." method="_on_VirusTimer_timeout"]
