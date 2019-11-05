@@ -10,9 +10,10 @@ export (int) var max_health = 100
 var angle: float = 0
 var direction: Vector2 = Vector2(0, -1)
 var can_shoot: bool = true
+var screen_size: Vector2
 
 func _ready():
-	pass
+	screen_size = get_viewport_rect().size
 
 
 func _process(delta):
@@ -50,6 +51,9 @@ func _process(delta):
 	
 	rotation = angle
 	position += velocity * speed * delta
+	
+	position.x = clamp(position.x, 0, screen_size.x)
+	position.y = clamp(position.y, 0, screen_size.y)
 	
 	if Input.is_action_pressed("ui_accept") and can_shoot:
 		var laser = player_laser.instance()
