@@ -78,7 +78,5 @@ func _on_player_area_entered(area):
 			if area.damage:
 				health -= area.damage
 
-
-func _on_player_player_hit():
-	if health <= 0:
-		emit_signal("player_died")
+			if health <= 0:
+				emit_signal("player_died")
