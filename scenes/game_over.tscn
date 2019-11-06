@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="gameOver" type="CanvasLayer"]
+
+[node name="GUI" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0

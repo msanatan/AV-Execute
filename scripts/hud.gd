@@ -3,7 +3,7 @@ extends CanvasLayer
 onready var ScoreLabel = $GUI/HBoxContainer/ScoreLabel
 onready var HPLabel = $GUI/HBoxContainer/HealthBars/HealthLabel
 onready var HPGauge = $GUI/HBoxContainer/HealthBars/Gauge
-onready var Countdown = $CenterContainer/Countdown
+onready var Countdown = $GUI/CenterContainer/Countdown
 
 func _ready():
 	pass
