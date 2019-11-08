@@ -42,7 +42,7 @@ func _on_player_player_hit():
 func _on_StartTimer_timeout():
 	start_time -= 1
 	if start_time == 0:
-		$hud/GUI/CenterContainer/Countdown.hide()
+		$hud/GUI/VBoxContainer/CenterContainer/Countdown.hide()
 		$VirusTimer.start()
 		$StartTimer.stop()
 	$hud.update_countdown(start_time)

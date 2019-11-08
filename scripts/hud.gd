@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-onready var ScoreLabel = $GUI/HBoxContainer/ScoreLabel
-onready var HPLabel = $GUI/HBoxContainer/HealthBars/HealthLabel
-onready var HPGauge = $GUI/HBoxContainer/HealthBars/Gauge
-onready var Countdown = $GUI/CenterContainer/Countdown
+onready var ScoreLabel = $GUI/VBoxContainer/TopHUD/ScoreLabel
+onready var HPLabel = $GUI/VBoxContainer/TopHUD/HealthBars/HealthLabel
+onready var HPGauge = $GUI/VBoxContainer/TopHUD/HealthBars/Gauge
+onready var Countdown = $GUI/VBoxContainer/CenterContainer/Countdown
 
 func _ready():
 	pass
