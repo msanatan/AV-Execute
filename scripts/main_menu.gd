@@ -1,7 +1,7 @@
 extends MarginContainer
 
 var scene_path_to_load : String
-onready var MenuButtons = $CenterContainer/VBoxContainer/MenuButtons
+onready var MenuButtons = $CenterContainer/HBoxContainer/MenuButtons
 
 func _ready():
 	MenuButtons.get_child(0).grab_focus()
@@ -10,6 +10,8 @@ func _ready():
 
 
 func _on_Button_pressed(button):
+	if button.quit_game:
+		get_tree().quit()
 	scene_path_to_load = button.scene_to_load
 	$FadeIn.show()
 	$FadeIn.fade_in()
