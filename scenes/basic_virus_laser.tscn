@@ -1,11 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/laser.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/virus_laser.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/basic_virus_laser.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
+radius = 106.643
 
 [node name="laser" instance=ExtResource( 1 )]
+scale = Vector2( 0.1, 0.1 )
 speed = 500
 damage = 10
 
@@ -14,6 +16,10 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" parent="." index="2"]
+position = Vector2( -0.5479, 0.18262 )
+scale = Vector2( 7.81229, 7.11828 )
 
 [node name="identifier" parent="." index="3"]
 game_id = "basic_virus_laser"
