@@ -15,7 +15,7 @@ extents = Vector2( 14.2074, 26.545 )
 scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
 health = 20
-speed = 40
+speed = 100
 damage = 20
 points = 10
 basic_virus_laser = ExtResource( 3 )
@@ -50,6 +50,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="MoveTimer" type="Timer" parent="." index="7"]
+autostart = true
 
 [node name="identifier" parent="." index="8"]
 game_id = "basic_virus"

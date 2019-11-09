@@ -2,30 +2,29 @@ extends "res://scripts/virus.gd"
 
 export (PackedScene) var basic_virus_laser
 var can_move: bool
-var velocity: Vector2
 
 func _ready():
 	can_move = true
 
 
 func _process(delta):
-	var move_vector = Vector2()
+	var velocity = Vector2()
 	if can_move:
-		move_vector = Vector2(speed, 0).rotated(angle)
-		can_move = false
-		$MoveTimer.start()
-
-	position += move_vector
+		velocity = Vector2(1, 0)
+	
+	velocity = velocity.normalized().rotated(angle)
+	position += velocity * speed * delta
 
 	if can_shoot:
 		shoot()
 
+
 func _on_ShootTimer_timeout():
-	can_shoot = true
+	can_shoot = !can_shoot
 
 
 func _on_MoveTimer_timeout():
-	can_move = true
+	can_move = !can_move
 
 
 func shoot():
