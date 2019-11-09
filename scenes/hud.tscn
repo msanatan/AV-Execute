@@ -9,6 +9,8 @@
 [node name="hud" type="CanvasLayer"]
 script = ExtResource( 1 )
 
+[node name="Tween" type="Tween" parent="."]
+
 [node name="GUI" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -41,6 +43,7 @@ margin_right = 266.0
 margin_bottom = 30.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+max_value = 0.0
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
 
@@ -52,7 +55,6 @@ custom_fonts/font = ExtResource( 2 )
 text = "Score: "
 
 [node name="CenterContainer" type="CenterContainer" parent="GUI/VBoxContainer"]
-editor/display_folded = true
 margin_top = 82.0
 margin_right = 1024.0
 margin_bottom = 768.0
