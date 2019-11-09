@@ -10,12 +10,12 @@ func _ready():
 
 
 func update_player_health(health: int):
-	HPLabel.text = "HP:   " + str(health)
+	HPLabel.text = "HP:      " + str(health)
 	HPGauge.value = health
 
 
 func update_score(score: int):
-	ScoreLabel.text = "Score:" + str(score)
+	ScoreLabel.text = "Score: " + str(score)
 	
 
 func update_countdown(seconds: int):
