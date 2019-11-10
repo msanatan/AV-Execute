@@ -75,12 +75,11 @@ func _on_ShootTimer_timeout():
 
 func _on_player_area_entered(area):
 	if area.get_node("identifier"):
-		emit_signal("player_hit")
 		var identifier = area.get_node("identifier")
 		if identifier.game_id == "basic_virus_laser" or identifier.game_id == "basic_virus":
 			area.queue_free()
 			if area.damage:
 				health -= area.damage
-
+				emit_signal("player_hit")
 			if health <= 0:
 				emit_signal("player_died")
