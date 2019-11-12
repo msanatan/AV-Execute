@@ -24,13 +24,18 @@ func update_player_health(health: int):
 		health, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	if not tween.is_active():
 		tween.start()
-	print("health ", health)
-	print("animated_health ", animated_health)
 
 
 func update_score(score: int):
 	ScoreLabel.text = "Score: " + str(score)
-	
+
 
 func update_countdown(seconds: int):
 	Countdown.text = str(seconds)
+
+
+func fade_hud():
+	var start_color = Color(1.0, 1.0, 1.0, 1.0)
+	var end_color = Color(1.0, 1.0, 1.0, 0.0)
+	tween.interpolate_property($GUI, "modulate", start_color,
+		end_color, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
