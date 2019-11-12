@@ -46,3 +46,7 @@ func _on_StartTimer_timeout():
 		$VirusTimer.start()
 		$StartTimer.stop()
 	$hud.update_countdown(start_time)
+
+
+func _on_player_player_died():
+	$hud.fade_hud()

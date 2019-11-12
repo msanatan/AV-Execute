@@ -42,6 +42,7 @@ wait_time = 2.0
 
 [node name="hud" parent="." instance=ExtResource( 4 )]
 player_max_health = 100
+[connection signal="player_died" from="player" to="." method="_on_player_player_died"]
 [connection signal="player_hit" from="player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="VirusTimer" to="." method="_on_VirusTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
