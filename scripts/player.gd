@@ -12,11 +12,17 @@ var direction: Vector2 = Vector2(0, -1)
 var can_shoot: bool = true
 var screen_size: Vector2
 
+# When the character dies, we fade the UI
+enum STATES {ALIVE, DEAD}
+var state = STATES.ALIVE
+
 func _ready():
 	screen_size = get_viewport_rect().size
 
 
 func _process(delta):
+	if state == STATES.DEAD:
+		return
 	var velocity = Vector2()
 	var up : bool = false
 	var down : bool = false
@@ -74,6 +80,8 @@ func _on_ShootTimer_timeout():
 
 
 func _on_player_area_entered(area):
+	if state == STATES.DEAD:
+		return
 	if area.get_node("identifier"):
 		var identifier = area.get_node("identifier")
 		if identifier.game_id == "basic_virus_laser" or identifier.game_id == "basic_virus":
@@ -82,4 +90,6 @@ func _on_player_area_entered(area):
 				health -= area.damage
 				emit_signal("player_hit")
 			if health <= 0:
+				health = 0
+				state = STATES.DEAD
 				emit_signal("player_died")
