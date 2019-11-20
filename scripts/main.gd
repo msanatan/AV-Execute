@@ -33,6 +33,7 @@ func _on_VirusTimer_timeout():
 func on_virus_died(virus):
 	score += virus.points
 	$hud.update_score(score)
+	global.player_score = score
 
 
 func _on_player_player_hit():
