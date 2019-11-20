@@ -29,7 +29,7 @@ margin_bottom = 768.0
 margin_left = 212.0
 margin_top = 195.0
 margin_right = 812.0
-margin_bottom = 573.0
+margin_bottom = 595.0
 
 [node name="GameOver" type="TextureRect" parent="CenterContainer/VBoxContainer"]
 margin_right = 600.0
