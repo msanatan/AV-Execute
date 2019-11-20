@@ -1,7 +1,70 @@
-[gd_scene format=2]
+[gd_scene load_steps=10 format=2]
 
-[node name="gameOver" type="CanvasLayer"]
+[ext_resource path="res://scripts/game_over.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/game-over.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/game_over_score_russo_one.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/menu_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/retry-button.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/retry-button-focused.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/main-menu-button.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/main-menu-button-focused.png" type="Texture" id=8]
+[ext_resource path="res://scenes/fade_in.tscn" type="PackedScene" id=9]
 
-[node name="GUI" type="MarginContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="GUI" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 768.0
+rect_pivot_offset = Vector2( -722.171, -27.2912 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 768.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 212.0
+margin_top = 195.0
+margin_right = 812.0
+margin_bottom = 573.0
+
+[node name="GameOver" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 150.0
+texture = ExtResource( 2 )
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 154.0
+margin_right = 600.0
+margin_bottom = 210.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.466667, 0.796078, 1, 1 )
+text = "Score: "
+align = 1
+uppercase = true
+
+[node name="MenuButtons" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 214.0
+margin_right = 600.0
+margin_bottom = 378.0
+
+[node name="RetryButton" parent="CenterContainer/VBoxContainer/MenuButtons" instance=ExtResource( 4 )]
+margin_right = 600.0
+margin_bottom = 80.0
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 6 )
+scene_to_load = "res://scenes/main.tscn"
+
+[node name="MainMenuButton" parent="CenterContainer/VBoxContainer/MenuButtons" instance=ExtResource( 4 )]
+margin_top = 84.0
+margin_right = 600.0
+margin_bottom = 164.0
+texture_normal = ExtResource( 7 )
+texture_focused = ExtResource( 8 )
+scene_to_load = "res://scenes/main_menu.tscn"
+
+[node name="FadeIn" parent="." instance=ExtResource( 9 )]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
