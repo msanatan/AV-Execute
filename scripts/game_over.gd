@@ -2,11 +2,13 @@ extends MarginContainer
 
 var scene_path_to_load : String
 onready var MenuButtons = $CenterContainer/VBoxContainer/MenuButtons
+onready var ScoreLabel = $CenterContainer/VBoxContainer/ScoreLabel
 
 func _ready():
 	MenuButtons.get_child(0).grab_focus()
 	for button in MenuButtons.get_children():
 		button.connect("pressed", self, "_on_Button_pressed", [button])
+	ScoreLabel.text = "Score: " + str(global.player_score)
 
 
 func _on_Button_pressed(button):
