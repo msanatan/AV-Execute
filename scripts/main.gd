@@ -51,3 +51,9 @@ func _on_StartTimer_timeout():
 
 func _on_player_player_died():
 	$hud.fade_hud()
+	$FadeIn.show()
+	$FadeIn.fade_in()
+
+
+func _on_FadeIn_fade_finished():
+	get_tree().change_scene("res://scenes/game_over.tscn")
