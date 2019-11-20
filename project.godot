@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="AV: Execute"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://scripts/global.gd"
 
 [display]
 
