@@ -2,6 +2,7 @@ extends Area2D
 
 signal player_hit
 signal player_died
+signal player_moved
 
 export (PackedScene) var player_laser
 export (int) var speed = 300
@@ -11,6 +12,7 @@ var angle: float = 0
 var direction: Vector2 = Vector2(0, -1)
 var can_shoot: bool = true
 var screen_size: Vector2
+var last_position: Vector2
 
 # When the character dies, we fade the UI
 enum STATES {ALIVE, DEAD}
@@ -60,6 +62,11 @@ func _process(delta):
 	
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
+
+	# Check if to send move signal
+	if position != last_position:
+		last_position = position
+		emit_signal("player_moved")
 	
 	if Input.is_action_pressed("ui_accept") and can_shoot:
 		var laser = player_laser.instance()
