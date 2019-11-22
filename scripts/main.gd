@@ -57,3 +57,9 @@ func _on_player_player_died():
 
 func _on_FadeIn_fade_finished():
 	get_tree().change_scene("res://scenes/game_over.tscn")
+
+
+func _on_player_player_moved():
+	for child in get_children():
+		if "target" in child:
+			child.set_target($player.position)
