@@ -37,7 +37,7 @@ position = Vector2( -2, 1.39998 )
 rotation = 0.00194737
 
 [node name="VirusTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 
 [node name="StartTimer" type="Timer" parent="."]
 
