@@ -2,6 +2,7 @@ extends "res://scripts/virus.gd"
 
 export (PackedScene) var basic_virus_laser
 var can_move: bool
+var target: Vector2
 
 func _ready():
 	can_move = true
@@ -50,3 +51,7 @@ func _on_virus_area_entered(area):
 			if health <= 0:
 				emit_signal("virus_died")
 				queue_free()
+
+
+func set_target(player_position):
+	target = player_position
