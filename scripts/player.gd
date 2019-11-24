@@ -13,6 +13,7 @@ var direction: Vector2 = Vector2(0, -1)
 var can_shoot: bool = true
 var screen_size: Vector2
 var last_position: Vector2
+var animation_counter: int
 
 # When the character dies, we fade the UI
 enum STATES {ALIVE, DEAD}
@@ -96,7 +97,16 @@ func _on_player_area_entered(area):
 			if area.damage:
 				health -= area.damage
 				emit_signal("player_hit")
+				# Play hit animation
+				$Blink.play("blink")
+				animation_counter = 3
 			if health <= 0:
 				health = 0
 				state = STATES.DEAD
 				emit_signal("player_died")
+
+
+func _on_Blink_animation_finished(anim_name):
+	animation_counter -= 1
+	if animation_counter > 0:
+		$Blink.play("blink")
