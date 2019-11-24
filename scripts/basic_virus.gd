@@ -2,7 +2,7 @@ extends "res://scripts/virus.gd"
 
 export (PackedScene) var basic_virus_laser
 var can_move: bool
-var target: Vector2
+var direction: Vector2
 
 func _ready():
 	can_move = true
@@ -11,9 +11,9 @@ func _ready():
 func _process(delta):
 	var velocity = Vector2()
 	if can_move:
-		velocity = Vector2(1, 0)
+		velocity = direction
 	
-	velocity = velocity.normalized().rotated(angle)
+	velocity = velocity.normalized()
 	position += velocity * speed * delta
 
 	if can_shoot:
@@ -53,5 +53,5 @@ func _on_virus_area_entered(area):
 				queue_free()
 
 
-func set_target(player_position):
-	target = player_position
+func set_target(game_position, player_position):
+	direction = player_position - game_position
