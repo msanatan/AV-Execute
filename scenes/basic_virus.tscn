@@ -16,7 +16,7 @@ scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
 health = 20
 speed = 100
-damage = 20
+damage = 10
 points = 10
 basic_virus_laser = ExtResource( 3 )
 
