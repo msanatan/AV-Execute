@@ -27,7 +27,8 @@ func _on_VirusTimer_timeout():
 	var virus_angle = $VirusPath/VirusSpawnLocation.rotation + PI / 2
 	var virus_position = $VirusPath/VirusSpawnLocation.position
 	virus.set_start_position(virus_position)
-	virus.angle = virus_angle
+	virus.rotation = virus_angle
+	virus.set_target(virus.get_global_position(), $player.get_global_position())
 
 
 func on_virus_died(virus):
@@ -61,5 +62,7 @@ func _on_FadeIn_fade_finished():
 
 func _on_player_player_moved():
 	for child in get_children():
-		if "target" in child:
-			child.set_target($player.position)
+		if child.has_node("identifier"):
+			var identifier = child.get_node("identifier")
+			if identifier.game_id == "basic_virus":
+				child.set_target(child.get_global_position(), $player.get_global_position())
